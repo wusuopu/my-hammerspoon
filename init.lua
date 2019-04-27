@@ -4,12 +4,12 @@ spoon.Caffeine:start()
 
 hs.loadSpoon('WindowHalfsAndThirds')
 spoon.WindowHalfsAndThirds:bindHotkeys({
-  left_half   = { {"cmd", "shift", "alt"}, "Left" },
-  right_half  = { {"cmd", "shift", "alt"}, "Right" },
-  top_half    = { {"cmd", "shift", "alt"}, "Up" },
-  bottom_half = { {"cmd", "shift", "alt"}, "Down" },
-  max         = { {"cmd", "shift", "alt"}, "M" },
-  undo        = { {"cmd", "shift", "alt"}, "/" }
+  left_half   = { {"cmd", "alt", "ctrl"}, "Left" },
+  right_half  = { {"cmd", "alt", "ctrl"}, "Right" },
+  top_half    = { {"cmd", "alt", "ctrl"}, "Up" },
+  bottom_half = { {"cmd", "alt", "ctrl"}, "Down" },
+  max         = { {"cmd", "alt", "ctrl"}, "M" },
+  undo        = { {"cmd", "alt", "ctrl"}, "/" }
 })
 
 hs.loadSpoon('HSKeybindings')
