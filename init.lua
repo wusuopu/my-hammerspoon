@@ -19,3 +19,7 @@ hs.loadSpoon('HSKeybindings')
 -- only keep text clipboard history. Use ClipMenu App can keep image clipboard history.
 -- hs.loadSpoon('ClipboardTool')
 -- spoon.ClipboardTool:start()
+
+hs.loadSpoon('KeyMouse')
+spoon.KeyMouse:bindHotkeys()
+spoon.KeyMouse:start()
