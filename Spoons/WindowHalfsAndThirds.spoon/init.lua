@@ -217,6 +217,23 @@ local function _restoreFrameCorrectness()
    hs.window.setFrameCorrectness = obj._savedFrameCorrectness
 end
 
+--- 将窗口移动到其他屏幕
+function obj.moveCurrentWindowToScreen(direction)
+   local win = hs.window.focusedWindow()
+   if not win then return end
+
+   local screen = win:screen()
+   local new_screen
+   if direction == "next" then
+     new_screen = screen:next()
+   else
+     new_screen = screen:previous()
+   end
+   if not new_screen then return end
+   if new_screen:id() == screen:id() then return end
+   win:moveToScreen(new_screen)
+end
+
 
 -- --------------------------------------------------------------------
 -- Base window resizing and moving functions
@@ -285,6 +302,9 @@ obj.topRight       = hs.fnutils.partial(obj.resizeCurrentWindow, "top_right")
 obj.bottomLeft     = hs.fnutils.partial(obj.resizeCurrentWindow, "bottom_left")
 obj.bottomRight    = hs.fnutils.partial(obj.resizeCurrentWindow, "bottom_right")
 obj.maximize       = hs.fnutils.partial(obj.resizeCurrentWindow, "max", true)
+--- 将窗口移动到其他屏幕
+obj.moveToNextScreen      = hs.fnutils.partial(obj.moveCurrentWindowToScreen, "next")
+obj.moveToPreviousScreen  = hs.fnutils.partial(obj.moveCurrentWindowToScreen, "previous")
 
 
 --- WindowHalfsAndThirds:toggleMaximized(win)
@@ -442,6 +462,9 @@ function obj:bindHotkeys(mapping)
       right = self.rightHalf,
       top = self.topHalf,
       bottom = self.bottomHalf,
+      --- 将窗口移动到其他屏幕
+      next_screen = self.moveToNextScreen,
+      previous_screen = self.moveToPreviousScreen,
    }
    hs.spoons.bindHotkeysToSpec(action_to_method_map, mapping)
    return self

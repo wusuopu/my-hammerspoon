@@ -1,6 +1,7 @@
 -- Prevent the screen from going to sleep Download
 hs.loadSpoon('Caffeine')
 spoon.Caffeine:start()
+spoon.Caffeine:clicked()
 
 hs.loadSpoon('WindowHalfsAndThirds')
 spoon.WindowHalfsAndThirds:bindHotkeys({
@@ -9,7 +10,9 @@ spoon.WindowHalfsAndThirds:bindHotkeys({
   top_half    = { {"cmd", "alt", "ctrl"}, "Up" },
   bottom_half = { {"cmd", "alt", "ctrl"}, "Down" },
   max         = { {"cmd", "alt", "ctrl"}, "M" },
-  undo        = { {"cmd", "alt", "ctrl"}, "/" }
+  undo        = { {"cmd", "alt", "ctrl"}, "/" },
+  next_screen     = { {"cmd", "alt", "ctrl"}, "l" },
+  previous_screen = { {"cmd", "alt", "ctrl"}, "h" },
 })
 
 hs.loadSpoon('HSKeybindings')
@@ -23,3 +26,6 @@ hs.loadSpoon('HSKeybindings')
 hs.loadSpoon('KeyMouse')
 spoon.KeyMouse:bindHotkeys()
 spoon.KeyMouse:start()
+
+hs.loadSpoon('KeyVolume')
+spoon.KeyVolume:bindHotkeys(spoon.KeyVolume.defaultHotkeys)
