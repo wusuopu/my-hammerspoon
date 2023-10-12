@@ -9,8 +9,8 @@ spoon.WindowHalfsAndThirds:bindHotkeys({
   right_half  = { {"cmd", "alt", "ctrl"}, "Right" },
   top_half    = { {"cmd", "alt", "ctrl"}, "Up" },
   bottom_half = { {"cmd", "alt", "ctrl"}, "Down" },
-  max         = { {"cmd", "alt", "ctrl"}, "M" },
-  undo        = { {"cmd", "alt", "ctrl"}, "/" },
+  max         = { {"cmd", "alt", "ctrl"}, "/" },
+  undo        = { {"cmd", "alt", "ctrl"}, "." },
   next_screen     = { {"cmd", "alt", "ctrl"}, "l" },
   previous_screen = { {"cmd", "alt", "ctrl"}, "h" },
 })
